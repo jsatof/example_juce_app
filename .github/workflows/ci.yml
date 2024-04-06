@@ -1,0 +1,46 @@
+name: Juce App CI
+
+on:
+  [push, pull_request]:
+    branches: master
+
+jobs:
+  install_project:
+    runs-on: gcc:11.4
+    steps:
+      - name: Install system deps
+        run: apt-get -y install cmake build-ninja
+
+  build:
+    needs: install_project
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Configure CMake
+        run: |
+          mkdir build
+          cd build
+          cmake -GNinja ..
+
+      - name: Compile
+        run: ninja
+
+
+  test:
+    needs: install_project
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Configure CMake
+        run: |
+          mkdir build
+          cd build
+          cmake -GNinja ..
+          ninja
+
+      - name: Compile
+        run: ninja test
+
+
