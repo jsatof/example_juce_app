@@ -4,6 +4,7 @@ enable_testing()
 
 add_executable(${PROJECT_NAME}
     src/AudioProcessorTest.cpp
+    src/HouseTest.cpp
 )
 
 target_include_directories(${PROJECT_NAME}
@@ -15,6 +16,7 @@ target_include_directories(${PROJECT_NAME}
 
 target_link_libraries(${PROJECT_NAME}
     PRIVATE
+        houseTutorial
         exampleGUIApp
         GTest::gtest_main
 )
