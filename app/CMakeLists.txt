@@ -12,10 +12,13 @@ juce_add_plugin(exampleGUIApp
     PRODUCT_NAME "Example GUI App"
 )
 
+set(exampleGUIApp_SOURCES
+        src/Main.cpp
+        src/MainComponent.cpp)
+
 target_sources(exampleGUIApp
     PRIVATE
-        src/Main.cpp
-        src/MainComponent.cpp
+        ${exampleGUIApp_SOURCES}
 )
 
 target_include_directories(exampleGUIApp
