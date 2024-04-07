@@ -13,4 +13,6 @@ include(cmake/dependencies.cmake)
 enable_testing()
 
 add_subdirectory(app)
+add_subdirectory(01_house_tutorial)
+add_subdirectory(02_slider)
 add_subdirectory(test)
