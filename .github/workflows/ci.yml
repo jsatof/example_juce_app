@@ -40,6 +40,7 @@ jobs:
           cd build
           cmake -GNinja ..
           ninja
+          ninja test
 
       - name: Compile
         run: ninja test
