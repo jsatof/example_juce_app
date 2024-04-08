@@ -10,6 +10,8 @@ set(CMAKE_RUNTIME_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/bin)
 set(ExampleGUIRoot_LIB_DIR ${PROJECT_SOURCE_DIR}/lib)
 include(cmake/dependencies.cmake)
 
+set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -fdiagnostics-color=always")
+
 enable_testing()
 
 add_subdirectory(app)
@@ -19,4 +21,5 @@ add_subdirectory(03_slider_listener)
 add_subdirectory(04_look_and_feel)
 add_subdirectory(05_look_and_feel_part_2)
 add_subdirectory(06_generating_audio_output)
+add_subdirectory(07_basic_wavetable_synthesis)
 add_subdirectory(test)
